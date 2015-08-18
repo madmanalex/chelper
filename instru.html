@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Calm breeze login screen</title>
+        <link rel="stylesheet" href="css/style.css">
+  		<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+   		<script src="js/sidebar_function.js"></script>
+  </head>
+
+  <body>
+  	<div class = "top-bar">
+  		<div id="nav">
+  			<div class = "left">
+  				<li><a href="#">Home</a></li>
+			</div>
+
+			<div class = "right">
+				<li><a href="signup.html">Signup</a></li>
+				<li><a href="index.html">Login</a></li>
+			</div>	
+		</div>
+  	</div>
+
+
+    <div class="wrapper">
+	<div class="container">
+		<!-- nice free sidebar -->
+		<div class= "sidebar">
+			<ul>
+				<li>Tool Menu</li>
+				<li>Word Of The Day</li>
+				<li>Queston Of The Day</li>
+				<li>Animal Of The Day</li>
+				<li>Friend List</li>
+				<li>Goals</li>
+				<li>Contact</li>
+			</ul>
+		</div>
+		<div class = "title">
+			<h1>How to Learn</h1>
+		</div>
+		<!-- This is where most of the content will be listed-->
+		<div class = "content" align="left">
+			<h3>There will be three parts to the learning process</h3>
+			<p id="a">Part 1: Learning of the character</p>
+			<ul>
+				<li>This is the hardest part of learning Chinese.</li>
+				<li>The learning process require repeative writing the character down at least 10 time each.</li>
+				<li>(Warning don't just write they character, think want they look like and they to find a way to remember them.)</li>
+				<li>After each 5 character you should stop and try to test if got the information down, if not then repeat until you do.</li>
+				<li>Used the tool like flashcard, self quiz, and self test to keep track of your process.</li>
+			</ul>
+		</div>
+		<div class = "content2" align= "left">
+			<h3>There will be three parts to the learning process</h3>
+			<p id="a">Part 2: Learning the Speech</p>
+			<ul>
+				<li>This is the not hard if you used it around the house.</li>
+				<li>Listen to how the words sounds.</li>
+				<li>Then record you sound and listen to yourself repeat that word.</li>
+				<li>When you think it sound close, ask a friend or family weather it sound close.</li>
+				<li>Used the tools provide but this site, everyday their will be a word of the day. Try to used to word around you close family or friend. Slowly ask part of you.</li>
+				<li>Example (instead of say hello, are ok. replace they with 你好, 你好吗)</li>
+				<li>The reason you need to pick people close to you is, they are the people you see daily. Please try not to annoy them with to many character. Try to slowing introduce these vocabulary to them.</li>
+			</ul>
+		</div>
+		<div class = "content3" align= "left">
+			<h3>There will be three parts to the learning process</h3>
+			<p id="a">Part 3: Learning how to used want you learn</p>
+			<ul>
+				<li>This will be close to grammer and not.</li>
+				<li>This part will try to explain to you who to used the word.</li>
+				<li>A lot of Character in chinese don't directly translate to English.</li>
+				<li>If you used to word without the context, like you will be misunderstood.</li>
+			</ul>
+		</div>
+		<div class = "content4">
+			<a href="#">Part 3: Grammer</a>
+			<a href="#">Part 2: Speech</a>
+			<a href="vol1.html">Part 1: Character</a>
+		</div>
+
+		<!-- two button at the end of main body-->
+		<div class="buttons" align="left">
+			<input id="forward" type="button" value = "next">
+			<input id="backward" type="button" value = "back">
+			
+		</div>
+		
+		
+		<script>
+			var count = 0;
+			$(".content2").hide();
+			$(".content3").hide();
+			$("#backward").hide();
+			$(".content4").hide();
+			$(document).ready(function(){
+			    $("#forward").click(function(){
+			        count = count + 1;
+			        if(count == 1){
+			        	$(".content").hide();
+			       		$(".content2").show();
+			       		$("#backward").show();
+			        }
+			        else if(count == 2){
+			        	$(".content2").hide();
+			        	$(".content3").show();
+			        	count = 2;
+			        }
+			        else
+			        {
+			        	$(".content3").hide();
+			        	$(".content4").show();
+			        	$("#forward").hide();
+			        }
+			    });
+			    $("#backward").click(function(){
+			        count = count - 1;
+			        if(count == 1){
+			        	$(".content3").hide();
+			       		$(".content2").show();
+			       		$("#backward").show();
+			        	$("#forward").show();
+			        }
+			        else if(count == 2){
+			        	$(".content4").hide();
+			       		$(".content3").show();
+			       		$("#forward").hide();
+			        }
+			        else{
+			        	$(".content2").hide();
+			        	$(".content").show();
+			        	$("#backward").hide();
+			        	$("#forward").show();
+			        	count = 0;
+			        }
+			    });
+			});
+		</script>
+		</div>
+	</div>
+	
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	</div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+        <script src="js/index.js"></script>
+    
+  </body>
+</html>

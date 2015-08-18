@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta charset="utf-8"/>
+
+</head>
+<body>
+	<script type="text/javascript" src="jspdf/libs/png_support/zlib.js"></script>
+	<script type="text/javascript" src="jspdf/libs/png_support/png.js"></script>
+	<script type="text/javascript" src="jspdf/libs/FileSaver/FileSaver.js"></script>
+	<script type="text/javascript" src="jspdf/jspdf.js"></script>
+	<script type="text/javascript" src="jspdf/plugins/addimage.js"></script>
+	<script type="text/javascript" src="jspdf/plugins/png_support.js"></script>
+	
+	drawing content
+	<!-- the size of the canvas and drawimage must match or the pital will be a mess --> 
+	<canvas id="myCanvas" width="975" height="126">
+	</canvas>
+	<script>
+	
+	var img = new Image();
+	var c = document.getElementById('myCanvas');
+	var ctx = c.getContext("2d");
+
+	img.onload = function () {
+	    ctx.drawImage(img, 0, 0,975,126);
+	    var imgData = c.toDataURL('image/png');
+	    var doc = new jsPDF("l","mm");
+	    doc.setFontSize(12);
+	    doc.addImage(imgData, 'PNG', 10, 10, 60, 20);
+	    doc.save('time.pdf');
+	}
+	img.src='word1.png';
+
+	</script>
+</body>
+</html>
