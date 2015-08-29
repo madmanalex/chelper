@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Calm breeze login screen</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/voc_design.css">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
   </head>
@@ -17,14 +18,15 @@
 		<!-- Controllers -->
 		<script src="js/controller/MainController.js"></script> 
 		<!-- jspdf file uploaded -->
-		<script src="http://parall.ax/parallax/js/jspdf.js"></script>       
+		<script src="http://parall.ax/parallax/js/jspdf.js"></script>
+
 
 
 
   	<div class = "top-bar">
   		<div id="nav">
   			<div class = "left">
-  				<li><a href="index.html">Home</a></li>
+  				<li><a href="interface.html">Home</a></li>
 			</div>
 
 			<div class = "right">
@@ -34,21 +36,23 @@
 		</div>
   	</div>
 
-
     <div class="wrapper" ng-controller="MainController">
 		<div class="container">
-		<div class= "sidebar">
+			<div class= "sidebar">
 			<ul>
-				<li>Word Of The Day</li>
-				<li>Queston Of The Day</li>
-				<li>Animal Of The Day</li>
+				<li ng-click="random_word()">Word Of The Day</li>
+				<li id="word"></li>
+				<li ng-click="random_question()">Queston Of The Day</li>
+				<li id="question"></li>
+				<li ng-click="random_animal()">Animal Of The Day</li>
+				<li id="animal"><img id="pic" width="180"></li>
 				<li onclick="draw()">Instrunction</li>
 				<li ng-click="printv()">Download List</a></li>
 			</ul>
-		</div>
+			</div>
 		<div class="main">
-		<h1>Lesson 1: Vocabarly Part 1 </h1>
-		<table style = "width:100%">
+			<h1>Lesson 1: Vocabarly Part 1 </h1>
+			<table style = "width:100%">
 			<tr align = "left">
 				<th>Character</th>
 				<th>Pingyin</th>
@@ -59,11 +63,9 @@
 				<th ><li id="b" ng-repeat = "x2 in pingyin">{{ x2 }}</li></th>
 				<th ><li id="c" ng-repeat = "x3 in english">{{ x3 }}</li></th>
 			</tr>
-		</table>
-
-
-		<p ng-repeat = "x1 in cletter" id="cletter" hidden>{{cletter}}<p>	
+			</table>		
 		</div>
+		<input id type="button" value="next" onclick="location.href='flashcard.html';">
 	</div>
 	
 	
@@ -79,7 +81,8 @@
 		<li></li>
 		<li></li>
 	</ul>
-</div>
+	</div>
+	<script src="jquery/jq_function.js"></script>
         
     
   </body>

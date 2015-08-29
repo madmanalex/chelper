@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Calm breeze login screen</title>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style_flash.css">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
   </head>
@@ -12,7 +12,7 @@
   	<div class = "top-bar">
   		<div id="nav">
   			<div class = "left">
-  				<li><a href="index.html">Home</a></li>
+  				<li><a href="interface.html">Home</a></li>
 			</div>
 
 			<div class = "right">
@@ -25,23 +25,14 @@
 
     <div class="wrapper" ng-controller="MainController">
 	<div class="container">
-		<div class= "sidebar">
-			<ul>
-				<li>Tool Menu</li>
-				<li>Word Of The Day</li>
-				<li>Queston Of The Day</li>
-				<li>Animal Of The Day</li>
-				<li>Vocal Lesson</li>
-				<li>Character Lesson</li>
-				<li>Contact</li>
-			</ul>
-		</div>
 		<div class="main">
 		<h1>Flash Card: Lesson 1 part 1 </h1>
 		<form class="form">
-
 			<input type="button" ng-keydown="key($event)" value={{show}} id="voicebox" >
-			<input type="button" onclick="intro1()" value = "click me!">
+			<input type="button" ng-click="random()" value = "Random!">
+			<div class="next">
+				<input type="button" class="button_active" value ="Next" onclick="location.href='quiz1.html';" />
+			</div>
 		</form>
 		
 	</div>
